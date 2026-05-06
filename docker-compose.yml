@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: denner-os-postgres
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: denner
+      POSTGRES_PASSWORD: denner123
+      POSTGRES_DB: denner_os
+    volumes:
+      - denner-os-data:/var/lib/postgresql/data
+
+volumes:
+  denner-os-data:
